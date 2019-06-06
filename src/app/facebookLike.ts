@@ -1,17 +1,25 @@
 
 export class FacebookLike {
-    constructor(private count: number, private state: boolean){
+    constructor(private _count: number, private _isSelected: boolean){
 
     }
     calculateCount(){
-        if(this.state){
-            this.count = this.count + 1;
-        }
-        else
-            this.count = this.count - 1;
-        return this.count;
+        this._count += (this._isSelected)? -1 : 1;
+        this._isSelected = !this._isSelected;
+        // if(this.isSelected){
+        //     this.count = this.count + 1;
+        // }
+        // else
+        //     this.count = this.count - 1;
+        // return this.count;
     }
-    printCount(){
-        console.log(this.calculateCount());
+    get count(){
+        return this._count
     }
+    get state(){
+        return this._isSelected;
+    }
+    // printCount(){
+    //     console.log('likes count: '+this.calculateCount());
+    // }
 }

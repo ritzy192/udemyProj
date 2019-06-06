@@ -20,6 +20,11 @@ import { FacebookLike } from './facebookLike';
 
 export class AppModule { 
 }
- var initialLikes = 1;
- new FacebookLike(initialLikes,true).printCount();
- new FacebookLike(initialLikes, false).printCount();
+ var initialLikes = 100;
+ let likeIt = new FacebookLike(initialLikes,false);
+ let dislikeIt = new FacebookLike(initialLikes,true);
+
+ likeIt.calculateCount();
+ dislikeIt.calculateCount();
+ console.log(`like count : ${likeIt.count}, isselected : ${likeIt.state}`);
+ console.log(`like count : ${dislikeIt.count}, isselected : ${dislikeIt.state}`);

@@ -5,7 +5,7 @@ import { Component,OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class StarComponent{
     @Input('Favourite') isFavourite: boolean;
-    @Output() change = new EventEmitter();
+    @Output('change') change = new EventEmitter();
 
     ngOnInit(){
 
@@ -13,7 +13,10 @@ export class StarComponent{
 
     onClick(){
         this.isFavourite = !this.isFavourite;
-        this.change.emit(this.isFavourite);
+        this.change.emit({newvalue: this.isFavourite});
     }
-
 }  
+
+export interface FavouriteEventArgs{
+    newValue: boolean
+}

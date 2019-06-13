@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FavouriteEventArgs } from './star.component';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
     // debugger
     isFavourite: false,
   }
-  logSelectedState(isFavourite){
-    console.log("is selected: "+isFavourite);
+  logSelectedState(args: FavouriteEventArgs){
+    console.log("is selected: ", args);
   }
 }

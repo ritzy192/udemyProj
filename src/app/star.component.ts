@@ -1,10 +1,11 @@
-import { Component,OnInit, Input } from '@angular/core';
+import { Component,OnInit, Input, Output, EventEmitter } from '@angular/core';
  @Component({
     selector: 'star',
     templateUrl: './star.component.html'
 })
 export class StarComponent{
     @Input('Favourite') isFavourite: boolean;
+    @Output() change = new EventEmitter();
 
     ngOnInit(){
 
@@ -12,5 +13,7 @@ export class StarComponent{
 
     onClick(){
         this.isFavourite = !this.isFavourite;
+        this.change.emit(this.isFavourite);
     }
+
 }  

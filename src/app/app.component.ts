@@ -11,4 +11,7 @@ export class AppComponent {
     // debugger
     isFavourite: false,
   }
+  logSelectedState(isFavourite){
+    console.log("is selected: "+isFavourite);
+  }
 }

@@ -6,4 +6,75 @@
 </div>
 <star [Favourite]="post.isFavourite" (change)="logSelectedState($event)" ></star>
 <courses></courses>
+
+<!-- 1st way -->
+<div *ngIf = 'Items.length > 0'>
+  List All
+</div>
+
+<div *ngIf = 'Items.length == 0'>
+  None to display
+</div>
 <router-outlet></router-outlet>
+
+
+<!-- 2nd way -->
+<div *ngIf ="Courses.length > 0; else noCourse">
+  List all Courses
+</div>
+<ng-template #noCourse>
+  No courses yet
+</ng-template>
+<br>
+
+<!-- 3rd way -->
+<div *ngIf ="Courses.length > 0; then Course else noCourse2"></div>
+  <ng-template #Course>
+    List all Courses2
+  </ng-template> 
+  <ng-template #noCourse2>
+    No courses2 yet
+  </ng-template>
+  <br>
+
+  <!-- Hidden --4th way>
+<div [hidden]="Courses.length == 0">
+ List of hidden courses
+</div>
+<div [hidden]='Courses.length > 0'>
+  No courses yet
+</div>!-->
+
+
+<!-- switch case -->
+<br>
+<br>
+<h4>Switch Case Example</h4>
+<ul class="nav nav-pills">
+  <li [class.active]="viewMode == 'map'">
+    <a (click)="viewMode = 'map'">Map View</a></li>
+  <li [class.active]="viewMode == 'list'">
+    <a (click)="viewMode = 'list'">List View</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map view Content</div>
+  <div *ngSwitchCase="'list'">List view content</div>
+  <div *ngSwitchDefault>otherwise</div>
+</div> 
+<br>
+<br>
+<h4>ngFor</h4>
+<button (click)="loadNames();">Load Names</button>
+<ul>
+  <li *ngFor="let item of Info; index as i;trackBy: trackNames">
+    {{i}} - {{item.name}} <span (click)=removeCourse(item);>X</span></li>
+</ul>
+<button class="btn" (click)='addCourse();'>Add Course</button>
+<br>
+<br>
+
+<!-- Custom directive -->
+<h4>Custom Directive</h4>
+<input type="text" [appInputFormat]="'lowercase'">
+<br>
+<br>

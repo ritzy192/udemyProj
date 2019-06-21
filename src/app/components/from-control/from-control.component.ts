@@ -10,4 +10,7 @@ export class FromControlComponent{
 public log(x){
   console.log(x);
 }
+public submit(y){
+  console.log(y);
+}
 }

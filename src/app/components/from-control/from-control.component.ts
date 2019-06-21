@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FromControlComponent{
 
+  contactMethods=[
+    {id: 1, name: 'email'},
+    {id: 2, name: 'phone'}
+  ]
 public log(x){
   console.log(x);
 }

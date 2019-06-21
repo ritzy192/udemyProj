@@ -8,6 +8,7 @@ import { FormsModule} from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { StarComponent } from './star.component';
 import { InputFormatDirective } from './input-format.directive';
+import { FromControlComponent } from './components/from-control/from-control.component';
 
 
  
@@ -17,7 +18,8 @@ import { InputFormatDirective } from './input-format.directive';
     CoursesComponent,
     SummaryPipe,
     StarComponent,
-    InputFormatDirective
+    InputFormatDirective,
+    FromControlComponent
   ],
   imports: [
     BrowserModule,

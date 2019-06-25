@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms'
 import { validateConfig } from '@angular/router/src/config';
-import { SpaceValidators } from 'src/app/common/validators/space.validator';
+import { UserNameValidators } from 'src/app/common/validators/username.validators';
 
 @Component({
   selector: 'signup-from',
@@ -11,11 +11,11 @@ import { SpaceValidators } from 'src/app/common/validators/space.validator';
 export class SignupFormComponent {
   form = new FormGroup({
     password: new FormControl('rwererew',[Validators.required]),
-    userName: new FormControl('fwe',[
+    userName: new FormControl('fwe',
       Validators.required, 
-      Validators.minLength(3),
-      SpaceValidators.cannotContainSpace
-    ])
+      UserNameValidators.shouldBeUnique
+      //UserNameValidators.cannotContainSpace not working along with shoul be unique
+      )
   });
 
   get userName(){

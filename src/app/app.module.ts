@@ -10,6 +10,7 @@ import { StarComponent } from './star.component';
 import { InputFormatDirective } from './input-format.directive';
 import { FromControlComponent } from './components/from-control/from-control.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { CoursesCoveredComponent } from './components/courses-covered/courses-covered.component';
 
 
  
@@ -21,7 +22,8 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
     StarComponent,
     InputFormatDirective,
     FromControlComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    CoursesCoveredComponent,
   ],
   imports: [
     BrowserModule,

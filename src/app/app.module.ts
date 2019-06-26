@@ -11,6 +11,8 @@ import { InputFormatDirective } from './input-format.directive';
 import { FromControlComponent } from './components/from-control/from-control.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { CoursesCoveredComponent } from './components/courses-covered/courses-covered.component';
+import { PostComponent } from './components/post/post.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
  
@@ -24,15 +26,17 @@ import { CoursesCoveredComponent } from './components/courses-covered/courses-co
     FromControlComponent,
     SignupFormComponent,
     CoursesCoveredComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [ 
-    CoursesService
+    CoursesService,
   ],
   bootstrap: [AppComponent]
 })
